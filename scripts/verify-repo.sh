@@ -18,7 +18,8 @@ REQUIRED=(
   README.md MANIFESTO.md LICENSE CONTRIBUTING.md GOVERNANCE.md roadmap.md
   articles/linkedin-beyond-apps.md
   research/landscape.md research/sources.md research/conceptual-ladder.md
-  design/philosophy.md design/architecture.md design/principles.md design/open-questions.md
+  research/poc-foundation-recommendation.md
+  design/philosophy.md design/architecture.md design/principles.md design/current-direction.md design/open-questions.md
   scripts/verify-repo.sh
 )
 for f in "${REQUIRED[@]}"; do
@@ -48,11 +49,23 @@ for f in "$ROOT"/MANIFESTO.md "$ROOT"/articles/linkedin-beyond-apps.md "$ROOT"/r
   done < <(grep -oP 'https?://[^\s|)>]+' "$f" 2>/dev/null | sort -u)
 done
 
-# 4. No git remote
+# 4. Publishing state
 echo "-- Checking publishing state --"
 if [[ -d "$ROOT/.git" ]]; then
-  if git -C "$ROOT" remote 2>/dev/null | grep -q .; then
-    err "Git remote configured — should not be published yet"
+  REMOTE_URL=$(git -C "$ROOT" remote get-url origin 2>/dev/null || true)
+  if [[ -n "$REMOTE_URL" ]]; then
+    if command -v gh >/dev/null 2>&1; then
+      VISIBILITY=$(gh repo view "$REMOTE_URL" --json visibility --jq .visibility 2>/dev/null || true)
+      if [[ "$VISIBILITY" == "PUBLIC" ]]; then
+        echo "   origin is public"
+      elif [[ -z "$VISIBILITY" ]]; then
+        warn "Could not verify origin visibility"
+      else
+        warn "Origin visibility is ${VISIBILITY}; publication is not complete"
+      fi
+    else
+      warn "gh is unavailable; could not verify origin visibility"
+    fi
   fi
 fi
 

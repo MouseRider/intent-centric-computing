@@ -26,6 +26,8 @@ This is where the project currently lives. The focus is on establishing foundati
 Translate research and design philosophy into a concrete technical architecture.
 
 - Define core primitives: intentions, commitments, policies, events, operations — with formal semantics where possible
+- Define precedents and versioned workflow families, including applicability, lineage, testing, promotion, rollback, and renewed-approval rules
+- Specify how probabilistic intent resolution compiles into deterministic operations with explicit, bounded semantic nodes
 - Specify the perception substrate: how the system observes and models the user's computational environment
 - Design the attention architecture: how relevance is determined, how information is filtered and prioritized
 - Design the capability broker and trust model: how the system gains, constrains, and delegates authority
@@ -40,8 +42,12 @@ Translate research and design philosophy into a concrete technical architecture.
 
 Build the minimum necessary to test core assumptions.
 
-- Scope determined by Phase 1 outcomes — no premature commitment to implementation strategy
-- Likely focus: a minimal intent-to-operation loop running in a sandboxed Linux environment
+- Use the disposable Linux shell path in [research/poc-foundation-recommendation.md](research/poc-foundation-recommendation.md) to test a narrow vertical slice; preserve replaceable protocol and trust boundaries
+- Demonstrate multimodal invocation with keyboard fallback and a trusted full-screen generated presentation surface
+- Compile the intent into a visible typed workflow, with deterministic nodes and at least one bounded semantic node
+- Save an approved run as a versioned precedent, then replay it under a changed environment to exercise selection or re-planning
+- Test frontier-to-local compilation by replacing one recurring model step with a typed rule, compact local model, or cached artifact
+- Exercise just-in-time capability discovery in simulation before attempting external physical sensors or actuators
 - Key validation questions:
   - Can intent resolution work at interaction speed (sub-second for simple intents)?
   - Can the perception substrate handle real event volumes without degrading user experience?

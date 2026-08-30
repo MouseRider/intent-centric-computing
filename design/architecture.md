@@ -11,7 +11,7 @@
 ```
 ┌─────────────────────────────────────────────────┐
 │              User / Interfaces                    │
-│  (conversation, generated UI, conventional apps) │
+│ (multimodal intent, trusted generated UI, apps)  │
 └──────────────────────┬──────────────────────────┘
                        │
 ┌──────────────────────▼──────────────────────────┐
@@ -79,6 +79,10 @@ Processing techniques include:
 
 The perception substrate is entirely deterministic and rule-based. It does not use machine learning or language models. Its behavior is predictable, inspectable, and debuggable. Rules may be generated or suggested by the AI runtime but are executed mechanically once deployed.
 
+The broader execution layer follows the same bias without pretending all semantic work is deterministic. Intent is compiled into typed, inspectable workflows whose ordinary nodes execute mechanically. Model-backed nodes are permitted only at explicit fuzzy boundaries, with constrained inputs and outputs, recorded model identity, confidence or uncertainty where meaningful, and policy-controlled escalation.
+
+Accepted runs can become versioned **precedents** and workflow families. Each record binds the interpreted intent to its plan, approvals, capabilities, environmental assumptions, outcome, provenance, and user corrections. The runtime chooses an applicable variant for the current environment; it must re-plan or request approval when material assumptions no longer hold. Scheduled and event-triggered optimization may propose new variants, but promotion requires sandboxed evaluation, policy checks, and rollback.
+
 ---
 
 ## Capability and Hardware Model
@@ -96,3 +100,7 @@ Hardware is represented semantically rather than as fixed device nodes. Each pie
 Discovery does not imply permission. The system may detect a new device on the network without automatically gaining authority to use it. Permission flows from user delegation, not from technical capability.
 
 Hardware composition means the system can reason about combining capabilities: "the user wants to present slides" might involve a laptop display, a projector, a wireless connection, and speaker output — assembled dynamically rather than configured statically.
+
+The target baseline is capable modern hardware with enough local compute, memory, storage, and connectivity for low-latency inference and rich composition. Degraded modes should be explicit rather than silently weakening privacy, quality, or safety. External sensing and actuation—including robots or drones—can be acquired just in time through the same capability model, with stricter safety policy and visible user control for physical-world effects.
+
+Generated full-screen HTML may serve as a presentation/output surface when rendered through trusted components. It is not a privileged input channel into legacy applications, and generated HTML or JavaScript is never executed as authority-bearing code. Conventional applications should expose structured interfaces or accessibility semantics; pixel-only applications may contribute a one-way visual stream without thereby receiving control of the intent runtime.

@@ -16,6 +16,7 @@ This document maps every URL cited in the project to the claims it supports, ena
 | 6 | OpenDAN | https://github.com/fiatrete/OpenDAN-Personal-AI-OS | Personal AI OS concept | Multi-agent personal computing exists; AI OS as concept has implementations | Yes (primary site) |
 | 7 | Man-Computer Symbiosis (Licklider, 1960) | https://groups.csail.mit.edu/medg/people/psz/Licklider.html | Foundational vision of human-computer collaboration | Historical precedent for intent-first interaction; computers as collaborators not tools | Yes (primary source) |
 | 8 | Personal Dynamic Media (Kay & Goldberg, 1977) | http://www.newmediareader.com/book_samples/nmr-26-kay.pdf | Dynabook vision of personal computing | Historical precedent for user-owned, malleable computing | Yes (primary source) |
+| 9 | PoC Foundation Recommendation source register | [poc-foundation-recommendation.md](poc-foundation-recommendation.md#primary-sources) | Primary repositories and specifications for Linux shells, agent runtimes, accessibility, and generative UI | Comparative PoC foundation analysis and migration recommendation | Yes (primary repositories/docs, snapshot 2026-08-30) |
 
 ## Verification Notes
 

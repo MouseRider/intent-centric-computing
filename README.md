@@ -4,7 +4,7 @@
 
 **Project status: `RESEARCH` / `DESIGN PROPOSAL`** — This repository contains research, design artifacts, and a manifesto. There is no running code.
 
-> **Not yet published.** This repository has been prepared locally and has not been pushed to a remote. No external publishing has occurred.
+> **Public research project.** The documents describe an evolving proposal, not a finished system. Claims are labeled by maturity and substantial changes should remain reviewable in version control.
 
 ## Status labels
 
@@ -21,6 +21,8 @@ Documents in this repository use these labels to distinguish maturity:
 
 - **[MANIFESTO.md](MANIFESTO.md)** — The project's vision, principles, and boundaries
 - **[roadmap.md](roadmap.md)** — Phased plan from research to prototype
+- **[design/current-direction.md](design/current-direction.md)** — Current synthesis: multimodal interaction, dependable workflows, precedents, local inference, and just-in-time hardware
+- **[research/poc-foundation-recommendation.md](research/poc-foundation-recommendation.md)** — Evidence-backed Linux shell, agent, and generative-UI PoC recommendation
 
 ## Repository structure
 
@@ -37,11 +39,13 @@ intent-centric-computing/
 ├── research/
 │   ├── landscape.md       # Prior-art map
 │   ├── conceptual-ladder.md  # Agent-operated → agent-modifiable → intent-native
+│   ├── poc-foundation-recommendation.md  # Linux/UI foundation research and PoC path
 │   └── sources.md         # Cited sources with verification status
 ├── design/
 │   ├── philosophy.md      # Core philosophy and models
 │   ├── architecture.md    # High-level architecture
 │   ├── principles.md      # Foundational principles
+│   ├── current-direction.md # Latest design synthesis and prototype implications
 │   └── open-questions.md  # Unresolved questions
 └── scripts/
     └── verify-repo.sh     # Repository structure verification
