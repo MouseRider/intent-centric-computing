@@ -10,6 +10,10 @@ The environment should accept **multimodal and spatial intent**, not just text o
 
 A full-screen HTML surface may be used as a portable **presentation and output canvas** for generated interfaces. It is not the primary mechanism for controlling legacy applications. Existing applications should expose structured APIs or accessibility semantics where possible; when only pixels are available, they may provide a **one-way visual stream** into the composed surface. Model-generated output must remain data interpreted by trusted renderers—never directly executed HTML, JavaScript, shell, QML, or native code.
 
+When no suitable interface exists and engineering a durable one would delay the outcome, the system may construct an **ephemeral semantic projection** of a tool's output. A model can interpret complex structured output, logs, documents, screenshots, or streams and map the relevant parts into a constrained declarative view rendered by trusted HTML/canvas components. The projection may omit irrelevant items, replace raw elements with task-appropriate controls or explanations, and reorganize the result as the intention evolves. It is a disposable lens over evidence—not a claim that the underlying tool produced that interface.
+
+Prefer structured components and deterministic canvas drawing over generated pictures: they are faster, accessible, inspectable, streamable, and independently updateable. Image generation is a last-resort illustrative aid, not a faithful or interactive representation. Every projected element should preserve source references and freshness; inferred or reconstructed content must be visibly distinguishable from source truth. Any action exposed by the projection maps to a typed capability and current underlying state rather than DOM manipulation, coordinates, or visual imitation.
+
 ## From fuzzy intent to dependable execution
 
 Natural-language interpretation is probabilistic, but routine execution should not remain so. The system should compile an intention into a visible, typed workflow made mostly of deterministic operations, with narrowly bounded model-backed nodes only where semantic judgment is genuinely required.

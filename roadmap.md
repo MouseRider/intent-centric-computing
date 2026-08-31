@@ -44,6 +44,7 @@ Build the minimum necessary to test core assumptions.
 
 - Use the disposable Linux shell path in [research/poc-foundation-recommendation.md](research/poc-foundation-recommendation.md) to test a narrow vertical slice; preserve replaceable protocol and trust boundaries
 - Demonstrate multimodal invocation with keyboard fallback and a trusted full-screen generated presentation surface
+- Demonstrate an ephemeral semantic projection that converts one tool's overly complex output into a task-specific HTML/canvas view while preserving provenance, freshness, accessibility, and typed actions
 - Compile the intent into a visible typed workflow, with deterministic nodes and at least one bounded semantic node
 - Save an approved run as a versioned precedent, then replay it under a changed environment to exercise selection or re-planning
 - Test frontier-to-local compilation by replacing one recurring model step with a typed rule, compact local model, or cached artifact
