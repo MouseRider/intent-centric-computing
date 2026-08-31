@@ -47,6 +47,9 @@ Build the minimum necessary to test core assumptions.
 - Demonstrate an ephemeral semantic projection that converts one tool's overly complex output into a task-specific HTML/canvas view while preserving provenance, freshness, accessibility, and typed actions
 - Compile the intent into a visible typed workflow, with deterministic nodes and at least one bounded semantic node
 - Save an approved run as a versioned precedent, then replay it under a changed environment to exercise selection or re-planning
+- Represent one desired outcome as a durable intent specification, then reconcile it against two different software/capability environments while preserving its user-visible and policy invariants
+- Demonstrate cold-start amortization by extracting shared primitives from several initially synthesized workflows and composing a later workflow mostly from the learned repertoire
+- Run a simulated night-time ecosystem review that discovers, benchmarks, and safely proposes a replacement implementation without changing the accepted intent contract
 - Test frontier-to-local compilation by replacing one recurring model step with a typed rule, compact local model, or cached artifact
 - Exercise just-in-time capability discovery in simulation before attempting external physical sensors or actuators
 - Key validation questions:
