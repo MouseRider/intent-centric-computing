@@ -6,7 +6,11 @@ This note records the working synthesis from the latest design discussion. It na
 
 ## Interaction model
 
-The environment should accept **multimodal and spatial intent**, not just text or a keyboard command. Depending on context, input may include speech, touch, gaze, gesture, pointer movement, physical position, nearby devices, and conventional controls. Accessibility is a first-class constraint: every important flow needs an inspectable, keyboard-operable alternative.
+The environment should accept **multimodal and spatial intent**, not just text or a keyboard command. Depending on context, input may include speech, touch, stylus, keyboard, mouse, trackpad, remote control, game controller, gaze, gesture, pointer movement, physical position, nearby devices, and conventional controls. Accessibility is a first-class constraint: every important flow needs an inspectable alternative operable through compatible available devices.
+
+Presentation endpoints are also candidate input endpoints. Whenever the system renders an experience on a tablet, computer, television, headset, vehicle display, or other device, it should discover and bind the input capabilities attached to or naturally associated with that endpoint. A tablet surface should accept touch and stylus; a computer should accept its keyboard, mouse, and trackpad; a television may accept its remote, controller, microphone, or a paired phone. These endpoint inputs participate in the same temporally synchronized grounding process as voice, gaze, gesture, and spatial context rather than forming a separate UI mode.
+
+Input follows the active experience across devices. The system must preserve endpoint identity, user identity, focus, timing, locality, accessibility semantics, trust, and authority, and must resolve conflicts when several devices can act on the same presentation. Merely being attached or nearby does not grant authority. Loss of a modality or endpoint should degrade explicitly to the remaining valid channels without losing the activity's state.
 
 A full-screen HTML surface may be used as a portable **presentation and output canvas** for generated interfaces. It is not the primary mechanism for controlling legacy applications. Existing applications should expose structured APIs or accessibility semantics where possible; when only pixels are available, they may provide a **one-way visual stream** into the composed surface. Model-generated output must remain data interpreted by trusted renderers—never directly executed HTML, JavaScript, shell, QML, or native code.
 
